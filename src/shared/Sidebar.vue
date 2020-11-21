@@ -7,11 +7,11 @@
       </template>
       Home
     </vs-sidebar-item>
-    <vs-sidebar-item id="market">
+    <vs-sidebar-item id="about">
       <template #icon>
         <i class="bx bx-grid-alt"></i>
       </template>
-      Market Overview
+      About
     </vs-sidebar-item>
     <vs-sidebar-item id="Music">
       <template #icon>
@@ -153,6 +153,17 @@ export default {
       },
       set(sidebarState) {
         return this.$store.dispatch("toggleSidebar", sidebarState);
+      },
+    },
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler() {
+        this.$store.dispatch(
+          "setActive",
+          this.$route.name ? this.$route.name.toLowerCase() : ""
+        );
       },
     },
   },

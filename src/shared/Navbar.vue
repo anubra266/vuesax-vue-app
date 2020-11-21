@@ -5,10 +5,10 @@
         <i class="bx bx-menu"></i>
       </vs-button>
     </template>
-    <vs-navbar-item id="home" to="/">
+    <vs-navbar-item :active="active == 'home'" id="home" to="/">
       Home
     </vs-navbar-item>
-    <vs-navbar-item id="about" to="/about">
+    <vs-navbar-item :active="active == 'about'" id="about" to="/about">
       About
     </vs-navbar-item>
     <!-- <template #right>
@@ -39,13 +39,15 @@ export default {
 };
 </script>
 
+
 <style scoped>
-.bar {
+.bar{
   display: none;
 }
 @media (max-width: 767px) {
-  .bar {
-    display: inline-block;
-  }
+    .bar {
+        display: inline-block;
+    }
+
 }
 </style>

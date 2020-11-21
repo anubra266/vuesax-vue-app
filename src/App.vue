@@ -18,7 +18,7 @@ import Sidebar from "@/shared/Sidebar";
 export default {
   components: { Navbar, Sidebar },
   created() {
-    // document.body.setAttribute("vs-theme", "dark");
+    document.body.setAttribute("vs-theme", "dark");
   },
 };
 </script>
