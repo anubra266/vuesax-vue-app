@@ -1,3 +1,3 @@
 export default {
-  sidebarState: (state, getters) => state.activeSidebar,
+  sidebarState: (state) => state.activeSidebar,
 };
