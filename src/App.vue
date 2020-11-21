@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="hidden">
+    <Navbar />
+
+    <Sidebar class="desktop" />
+
+    <Sidebar class="mobile" :mobile="true" />
+    <div class="page">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from "@/shared/Navbar";
+import Sidebar from "@/shared/Sidebar";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { Navbar, Sidebar },
+  created() {
+    // document.body.setAttribute("vs-theme", "dark");
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.page {
+  margin-top: 50px;
+  margin-left: 260px;
+  float: left;
+}
+.mobile{
+    display: none;
+}
+@media (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+  .mobile{
+    display: block;
+}
+  .page {
+    margin-left: 0;
+  }
 }
 </style>
