@@ -1,5 +1,5 @@
 export default {
   theme: "light",
-  active: "",
+  active: "home",
   activeSidebar: false,
 };
